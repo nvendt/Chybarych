@@ -1,53 +1,43 @@
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue'
 
-const getRandomInt = (max) => Math.floor(Math.random() * max);
-const number = ref(1);
+const getRandomInt = max => Math.floor(Math.random() * max)
+const number = ref(1)
 </script>
 
 <template>
   <main
     class="
       space-y-7
-      py-40
       max-w-full max-h-full
       flex flex-col
       items-center
       justify-center
-      bg-scroll
-      h-100
-      w-100
-      bg-slate-200
+      h-screen
     "
   >
     <img
       class="
         rounded-lg
-        mt-6
-        space-y-4
-        object-center
-        h-100
-        w-100
-        max-w-80 max-h-80
-        items-center
-        justify-center
+        object-cover
+        h-96
+        aspect-video
       "
       :src="`https://chubarich.fvs.app/${number}.png`"
-    />
+    >
 
     <button
       class="
         text-lg
-        pt-1
-        space-y
-        h-10
-        w-40
+        font-medium
+        py-2
+        px-4
         rounded-md
-        border-black
         text-white
         bg-blue-600
         shadow-md
-        object-center
+        shadow-blue-500/50
+        hover:bg-blue-700
       "
       @click="number = getRandomInt(32)"
     >
